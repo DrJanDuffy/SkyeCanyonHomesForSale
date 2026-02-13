@@ -67,19 +67,28 @@ export default function SkyeCanyonNeighborhoodExplorer({ className = '' }: Neigh
   };
 
   useEffect(() => {
+    // Timeout fallback: stop loading after 10s even if Google Maps fails
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+
     // Load Google Maps API
     if (!(window as any).google) {
       const script = document.createElement('script');
       script.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIGURATION.apiKey}&libraries=places,geometry`;
       script.async = true;
       script.defer = true;
-      script.onload = initializeMap;
+      script.onload = () => initializeMap();
+      script.onerror = () => {
+        setIsLoading(false);
+      };
       document.head.appendChild(script);
     } else {
       initializeMap();
     }
 
     return () => {
+      clearTimeout(timeout);
       // Cleanup
       if (map) {
         places.forEach(place => {
@@ -304,19 +313,6 @@ export default function SkyeCanyonNeighborhoodExplorer({ className = '' }: Neigh
 
   const displayedPlaces = showMorePlaces ? places : places.slice(0, 8);
 
-  if (isLoading) {
-    return (
-      <Card className={`w-full ${className}`}>
-        <CardContent className="p-6">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-realscout-blue mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading neighborhood information...</p>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
   return (
     <div className={`w-full ${className}`}>
       <Card className="overflow-hidden">
@@ -333,7 +329,12 @@ export default function SkyeCanyonNeighborhoodExplorer({ className = '' }: Neigh
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Places Panel */}
           <div className="bg-white p-4 max-h-96 overflow-y-auto">
-            {!selectedPlace ? (
+            {isLoading ? (
+              <div className="text-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <p className="text-gray-600">Loading neighborhood information...</p>
+              </div>
+            ) : !selectedPlace ? (
               <>
                 <div className="mb-4">
                   <div className="relative">
