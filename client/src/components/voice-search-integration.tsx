@@ -1,5 +1,5 @@
 import { AlertCircle, Mic, MicOff, Search } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -34,53 +34,10 @@ export default function VoiceSearchIntegration({
   const [isProcessing, setIsProcessing] = useState(false);
   const recognitionRef = useRef<any>(null);
 
-  useEffect(() => {
-    // Load search count from localStorage
-    const savedCount = localStorage.getItem('voiceSearchCount');
-    const savedDate = localStorage.getItem('voiceSearchDate');
-    const today = new Date().toDateString();
+  // Use a ref so the speech recognition callback always calls the latest handler
+  const handleVoiceSearchRef = useRef<(query: string) => Promise<void>>();
 
-    if (savedDate !== today) {
-      // Reset count for new day
-      localStorage.setItem('voiceSearchCount', '0');
-      localStorage.setItem('voiceSearchDate', today);
-      setSearchCount(0);
-    } else if (savedCount) {
-      setSearchCount(parseInt(savedCount, 10));
-    }
-
-    // Initialize speech recognition
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-      const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
-      recognitionRef.current = new SpeechRecognition();
-
-      recognitionRef.current.continuous = false;
-      recognitionRef.current.interimResults = true;
-      recognitionRef.current.lang = 'en-US';
-
-      recognitionRef.current.onresult = (event: any) => {
-        const currentTranscript = Array.from(event.results)
-          .map((result: any) => result[0].transcript)
-          .join('');
-
-        setTranscript(currentTranscript);
-
-        if (event.results[event.results.length - 1].isFinal) {
-          handleVoiceSearch(currentTranscript);
-        }
-      };
-
-      recognitionRef.current.onend = () => {
-        setIsListening(false);
-      };
-
-      recognitionRef.current.onerror = (_event: any) => {
-        setIsListening(false);
-      };
-    }
-  }, [handleVoiceSearch]);
-
-  const handleVoiceSearch = async (query: string) => {
+  const handleVoiceSearch = useCallback(async (query: string) => {
     if (!query.trim()) {
       return;
     }
@@ -128,7 +85,56 @@ export default function VoiceSearchIntegration({
       setIsProcessing(false);
       setTranscript('');
     }
-  };
+  }, [searchCount, maxSearches]);
+
+  // Keep the ref always pointing to the latest handler
+  handleVoiceSearchRef.current = handleVoiceSearch;
+
+  useEffect(() => {
+    // Load search count from localStorage
+    const savedCount = localStorage.getItem('voiceSearchCount');
+    const savedDate = localStorage.getItem('voiceSearchDate');
+    const today = new Date().toDateString();
+
+    if (savedDate !== today) {
+      // Reset count for new day
+      localStorage.setItem('voiceSearchCount', '0');
+      localStorage.setItem('voiceSearchDate', today);
+      setSearchCount(0);
+    } else if (savedCount) {
+      setSearchCount(parseInt(savedCount, 10));
+    }
+
+    // Initialize speech recognition
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+      recognitionRef.current = new SpeechRecognition();
+
+      recognitionRef.current.continuous = false;
+      recognitionRef.current.interimResults = true;
+      recognitionRef.current.lang = 'en-US';
+
+      recognitionRef.current.onresult = (event: any) => {
+        const currentTranscript = Array.from(event.results)
+          .map((result: any) => result[0].transcript)
+          .join('');
+
+        setTranscript(currentTranscript);
+
+        if (event.results[event.results.length - 1].isFinal) {
+          handleVoiceSearchRef.current?.(currentTranscript);
+        }
+      };
+
+      recognitionRef.current.onend = () => {
+        setIsListening(false);
+      };
+
+      recognitionRef.current.onerror = (_event: any) => {
+        setIsListening(false);
+      };
+    }
+  }, []);
 
   const triggerRealScoutPopup = () => {
     // Create overlay for RealScout integration
