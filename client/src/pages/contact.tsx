@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Footer from '@/components/footer';
+import HomebotWidget from '@/components/homebot-widget';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -251,6 +252,16 @@ export default function Contact() {
                         Nevada Real Estate License #S.0197614
                       </li>
                     </ul>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-bold mb-4">What's Your Home Worth?</h3>
+                    <p className="text-gray-600 text-sm mb-4">
+                      Get an instant AI-powered valuation for your Skye Canyon property.
+                    </p>
+                    <HomebotWidget id="homebot_contact" className="w-full min-h-[200px]" />
                   </CardContent>
                 </Card>
               </div>

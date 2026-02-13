@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Footer from '@/components/footer';
+import HomebotWidget from '@/components/homebot-widget';
 
 export default function SellerAgentServices() {
   return (
@@ -39,6 +40,26 @@ export default function SellerAgentServices() {
           </div>
         </div>
       </section>
+
+        {/* Home Valuation Widget */}
+        <section className="py-16 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Know Your Home's Value Before You List
+              </h2>
+              <p className="text-lg text-gray-600">
+                Get an instant, data-driven valuation for your Skye Canyon property. Understanding your home's market value is the first step to a successful sale.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100">
+              <HomebotWidget id="homebot_seller" className="w-full min-h-[200px]" />
+            </div>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Powered by Homebot &bull; Updated with real Skye Canyon market data
+            </p>
+          </div>
+        </section>
 
         <Footer />
       </div>

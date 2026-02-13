@@ -5,6 +5,7 @@ import ComprehensiveSchemaMarkup from '@/components/comprehensive-schema';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
+import HomebotWidget from '@/components/homebot-widget';
 import RealScoutListings from '@/components/realscout-listings';
 import ReviewHighlights from '@/components/review-highlights';
 import GoogleBusinessReview from '@/components/google-business-review';
@@ -107,7 +108,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. Services */}
+        {/* 4. Home Valuation Widget */}
+        <section className="py-16 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                What's Your Skye Canyon Home Worth?
+              </h2>
+              <p className="text-lg text-gray-600">
+                Get an instant, AI-powered home valuation for your Skye Canyon property. Updated monthly with real market data.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100">
+              <HomebotWidget id="homebot_homeowner" className="w-full min-h-[200px]" />
+            </div>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Powered by Homebot &bull; Trusted by top agents nationwide
+            </p>
+          </div>
+        </section>
+
+        {/* 5. Services */}
         <ServicesOverview />
 
         {/* 5. Explore Skye Canyon */}
