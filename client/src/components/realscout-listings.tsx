@@ -1,5 +1,3 @@
-import HomebotWidget from '@/components/homebot-widget';
-
 interface RealScoutListingsProps {
   className?: string;
   priceMin?: string;
@@ -109,9 +107,12 @@ export default function RealScoutListings({
           >
             Search All Homes
           </a>
-          <div className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 border border-blue-400 transition-colors">
-            <HomebotWidget id="homebot_homeowner_1" />
-          </div>
+          <a
+            href="/contact"
+            className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 border border-blue-400 transition-colors text-center"
+          >
+            Get Home Valuation
+          </a>
         </div>
       </div>
 
@@ -141,9 +142,12 @@ export default function RealScoutListings({
           >
             View All Available Homes
           </a>
-          <div className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-            <HomebotWidget id="homebot_homeowner_2" />
-          </div>
+          <a
+            href="/contact"
+            className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center"
+          >
+            Get Home Valuation
+          </a>
         </div>
         <p className="text-sm text-gray-600 mt-3">
           Click any property above to start your search or get detailed property information
