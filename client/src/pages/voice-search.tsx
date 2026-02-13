@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import VoiceSearchIntegration from '@/components/voice-search-integration';
 

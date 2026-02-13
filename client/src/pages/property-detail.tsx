@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useParams } from 'wouter';
 import { Helmet } from 'react-helmet-async';
+import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import RealScoutListings from '@/components/realscout-listings';
 import { Badge } from '@/components/ui/badge';

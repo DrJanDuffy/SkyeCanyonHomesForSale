@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from '@/hooks/use-search-params';
+import Navigation from '@/components/navigation';
 import BackToTop from '@/components/back-to-top';
 import Breadcrumb from '@/components/breadcrumb';
 import FAQSection from '@/components/faq-section';
