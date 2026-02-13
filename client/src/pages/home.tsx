@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import AgentBio from '@/components/agent-bio';
 import AISearchAssistant from '@/components/ai-search-assistant';
 import AuthenticPropertyListings from '@/components/authentic-property-listings';
@@ -157,7 +156,6 @@ export default function Home() {
       <GeoEnhancedSchema />
       <RealScoutAnalytics />
       <div className="min-h-screen bg-white">
-        <Navigation />
         <HeroSection />
 
         {/* Current Listings */}

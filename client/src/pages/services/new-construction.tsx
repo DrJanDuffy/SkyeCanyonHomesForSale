@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import ComprehensiveSchemaMarkup from '@/components/comprehensive-schema';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 
 export default function NewConstructionServices() {
   return (
@@ -44,7 +43,6 @@ export default function NewConstructionServices() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
         <main>
           <section className="py-12 bg-orange-600 text-white" role="banner">

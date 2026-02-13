@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from '@/hooks/use-search-params';
-import Navigation from '@/components/navigation';
 import BackToTop from '@/components/back-to-top';
 import Breadcrumb from '@/components/breadcrumb';
 import FAQSection from '@/components/faq-section';
@@ -78,7 +77,6 @@ export default function Properties() {
         <meta name="robots" content={searchQuery && searchQuery.length < 3 ? "noindex, follow" : "index, follow, max-image-preview:large"} />
       </Helmet>
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
         {/* Header */}
         <section className="bg-realscout-blue text-white py-12">

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import BackToTop from '@/components/back-to-top';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import NeighborhoodHeatmap from '@/components/neighborhood-heatmap';
 import RealScoutListings from '@/components/realscout-listings';
 import RelatedSearches from '@/components/related-searches';
@@ -51,7 +50,6 @@ export default function NeighborhoodAnalysis() {
         </script>
       </Helmet>
 
-      <Navigation />
 
       <main className="min-h-screen">
         {/* Hero Section */}

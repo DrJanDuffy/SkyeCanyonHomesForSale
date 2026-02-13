@@ -1,7 +1,6 @@
 import { CheckCircle, Globe, Search, TrendingUp } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import SEOManagementDashboard from '@/components/seo-management-dashboard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,7 +18,6 @@ export default function SEOManagement() {
         <link rel="canonical" href="https://skyecanyonhomesforsale.com/seo-management" />
       </Helmet>
 
-      <Navigation />
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero Section */}

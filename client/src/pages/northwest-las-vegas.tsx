@@ -1,7 +1,6 @@
 import { Home, MapPin, Shield, TrendingUp } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import RealScoutListings from '@/components/realscout-listings';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -50,7 +49,6 @@ export default function NorthwestLasVegas() {
         <link rel="canonical" href="https://skyecanyonhomesforsale.com/northwest-las-vegas" />
       </Helmet>
 
-      <Navigation />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-realscout-blue to-realscout-navy text-white py-16">

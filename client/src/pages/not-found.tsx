@@ -1,6 +1,5 @@
 import { AlertCircle, Home, Search, Phone } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,7 +16,6 @@ export default function NotFound() {
         <meta name="robots" content="noindex, follow" />
       </Helmet>
       
-      <Navigation />
       
       <main className="min-h-screen w-full flex items-center justify-center bg-gray-50">
         <Card className="w-full max-w-2xl mx-4">

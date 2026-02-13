@@ -5,7 +5,6 @@ import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
 import MarketIntelligence from '@/components/market-intelligence';
 import MarketStats from '@/components/market-stats';
-import Navigation from '@/components/navigation';
 import RealScoutListings from '@/components/realscout-listings';
 
 export default function MarketAnalysis() {
@@ -30,7 +29,6 @@ export default function MarketAnalysis() {
         <link rel="canonical" href="https://skyecanyonhomesforsale.com/market-analysis" />
       </Helmet>
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-realscout-blue via-realscout-light to-realscout-navy text-white py-16">

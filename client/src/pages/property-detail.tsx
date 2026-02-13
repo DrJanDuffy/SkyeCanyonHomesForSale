@@ -17,7 +17,6 @@ import {
 } from 'lucide-react';
 import { useParams } from 'wouter';
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import RealScoutListings from '@/components/realscout-listings';
 import { Badge } from '@/components/ui/badge';
@@ -60,7 +59,6 @@ export default function PropertyDetail() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-300 rounded w-1/3 mb-4"></div>
@@ -80,7 +78,6 @@ export default function PropertyDetail() {
   if (error || !property) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Property Not Found</h2>
@@ -104,7 +101,6 @@ export default function PropertyDetail() {
       </Helmet>
       
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
       {/* Hero Image */}
       <div className="relative h-96 lg:h-[500px]">

@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 
 export default function Search() {
@@ -15,7 +14,6 @@ export default function Search() {
         <link rel="canonical" href="https://skyecanyonhomesforsale.com/search" />
       </Helmet>
       
-      <Navigation />
       
       <main className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 py-16">

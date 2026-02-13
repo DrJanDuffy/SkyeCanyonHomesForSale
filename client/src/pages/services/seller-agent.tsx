@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 
 export default function SellerAgentServices() {
@@ -20,7 +19,6 @@ export default function SellerAgentServices() {
       </Helmet>
       
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
       <section className="py-12 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

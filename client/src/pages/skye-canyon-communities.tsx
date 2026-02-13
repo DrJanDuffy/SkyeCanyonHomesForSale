@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import EnhancedStructuredData from '@/components/enhanced-structured-data';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import RealScoutListings from '@/components/realscout-listings';
 
 export default function SkyeCanyonCommunities() {
@@ -143,7 +142,6 @@ export default function SkyeCanyonCommunities() {
       <EnhancedStructuredData />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-        <Navigation />
 
         {/* Hero Section */}
         <section className="pt-20 pb-16 px-4">

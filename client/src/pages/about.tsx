@@ -12,7 +12,6 @@ import {
   Users,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import BackToTop from '@/components/back-to-top';
 import Breadcrumb from '@/components/breadcrumb';
 import FAQSection from '@/components/faq-section';
@@ -172,7 +171,6 @@ export default function About() {
         <meta name="author" content="Dr. Jan Duffy" />
       </Helmet>
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
         {/* Breadcrumb Navigation */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">

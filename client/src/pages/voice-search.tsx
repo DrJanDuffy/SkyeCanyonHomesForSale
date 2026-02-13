@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 import VoiceSearchIntegration from '@/components/voice-search-integration';
 
@@ -30,7 +29,6 @@ export default function VoiceSearchPage() {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <Navigation />
 
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">

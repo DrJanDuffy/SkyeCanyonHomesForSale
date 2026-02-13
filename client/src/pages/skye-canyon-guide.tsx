@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import BackToTop from '@/components/back-to-top';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import RealScoutListings from '@/components/realscout-listings';
 import RelatedSearches from '@/components/related-searches';
 import { Card, CardContent } from '@/components/ui/card';
@@ -30,7 +29,6 @@ export default function SkyeCanyonGuide() {
         <link rel="canonical" href="https://skyecanyonhomesforsale.com/skye-canyon-guide" />
       </Helmet>
       <div className="min-h-screen bg-gray-50">
-        <Navigation />
 
         {/* Community Overview */}
         <section className="bg-gradient-to-br from-realscout-blue via-realscout-light to-realscout-navy text-white py-16">

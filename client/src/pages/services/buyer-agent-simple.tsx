@@ -1,10 +1,8 @@
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 
 export default function BuyerAgentServicesSimple() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation />
 
       <section className="py-12 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,6 @@ import { BookOpen, Clock, GraduationCap, MapPin, School, Star, Users } from 'luc
 import { Helmet } from 'react-helmet-async';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import RealScoutListings from '@/components/realscout-listings';
 
 const elementarySchools = [
@@ -182,7 +181,6 @@ export default function SkyeCanyonSchools() {
       </script>
 
       <div className="min-h-screen bg-white">
-        <Navigation />
 
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
