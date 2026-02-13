@@ -2,14 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import AgentBio from '@/components/agent-bio';
 import CallToAction from '@/components/call-to-action';
 import ComprehensiveSchemaMarkup from '@/components/comprehensive-schema';
-import CriticalCSS from '@/components/critical-css';
-import CriticalPerformanceLoader from '@/components/critical-performance-loader';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
-import GeoEnhancedSchema from '@/components/geo-enhanced-schema';
 import HeroSection from '@/components/hero-section';
-import LocalBusinessSchema from '@/components/local-business-schema';
-import LocalCitationsSchema from '@/components/local-citations-schema';
 import RealScoutListings from '@/components/realscout-listings';
 import ReviewHighlights from '@/components/review-highlights';
 import GoogleBusinessReview from '@/components/google-business-review';
@@ -67,11 +62,7 @@ export default function Home() {
           { author: 'Lisa Anderson', rating: 5, reviewBody: 'Professional, knowledgeable, and responsive. Dr. Duffy made our new construction purchase stress-free with her builder relationships.', datePublished: '2024-11-28' },
         ]}
       />
-      <CriticalCSS />
-      <CriticalPerformanceLoader />
-      <LocalBusinessSchema />
-      <LocalCitationsSchema />
-      <GeoEnhancedSchema />
+      {/* Single consolidated schema - no duplicates */}
 
       <div className="min-h-screen bg-white">
         {/* 1. Hero */}

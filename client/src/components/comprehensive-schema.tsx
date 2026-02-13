@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SchemaMarkupProps {
@@ -392,33 +391,11 @@ export default function ComprehensiveSchemaMarkup({
     getBreadcrumbSchema(),
   ].filter(Boolean);
 
-  // Use effect to inject schema directly into document head
-  useEffect(() => {
-    // Remove existing schema scripts to prevent duplicates
-    const existingSchemas = document.querySelectorAll('script[data-schema-type="comprehensive"]');
-    existingSchemas.forEach((script) => script.remove());
-
-    // Inject new schema scripts
-    schemas.forEach((schema, _index) => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.setAttribute('data-schema-type', 'comprehensive');
-      script.textContent = JSON.stringify(schema, null, 0);
-      document.head.appendChild(script);
-    });
-
-    // Cleanup function
-    return () => {
-      const schemasToRemove = document.querySelectorAll('script[data-schema-type="comprehensive"]');
-      schemasToRemove.forEach((script) => script.remove());
-    };
-  }, [schemas]);
-
   return (
     <Helmet>
       {schemas.map((schema, index) => (
         <script
-          key={`helmet-${index}`}
+          key={`schema-${index}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 0) }}
         />
