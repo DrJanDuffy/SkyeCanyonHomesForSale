@@ -12,11 +12,12 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 Disallow: /leads
+Disallow: /lead-dashboard
 Disallow: /followup-boss-status
+Disallow: /performance-dashboard
+Disallow: /seo-management
 Disallow: /_vite/
 Disallow: /src/
-Disallow: /*.json$
-Disallow: /*.xml$
 
 # Allow important pages
 Allow: /
@@ -34,3 +35,4 @@ Allow: /skye-canyon-communities
 Allow: /market-analysis
 Allow: /neighborhood-analysis
 Allow: /services/
+Allow: /sitemap.xml

@@ -105,26 +105,15 @@ app.get('/api/realscout/onboarding', (req, res) => {
   });
 });
 
-// SEO endpoints - robots.txt only (sitemap handled by /api/sitemap)
-
-app.get('/robots.txt', (req, res) => {
-  res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Cache-Control', 'public, max-age=86400');
-  
-  const robots = `User-agent: *
-Allow: /
-Sitemap: https://skyecanyonhomesforsale.com/sitemap.xml`;
-  
-  res.send(robots);
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// All other routes serve the React app (except robots.txt)
-app.get('*', (req, res) => {
-  // Skip serving React app for robots.txt
-  if (req.path === '/robots.txt') {
-    return res.status(404).send('Not found');
-  }
-  res.sendFile(path.join(__dirname, '../dist/public/index.html'));
+// Catch-all for unknown API routes - return 404 JSON response
+// NOTE: Page routes are handled by Vercel's static file serving + SPA rewrite in vercel.json
+app.use((req, res) => {
+  res.status(404).json({ error: 'API endpoint not found', path: req.path });
 });
 
 // Export for Vercel
