@@ -1,14 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import HomebotWidget from '@/components/homebot-widget';
 import AgentBio from '@/components/agent-bio';
-import AISearchAssistant from '@/components/ai-search-assistant';
-import AuthenticPropertyListings from '@/components/authentic-property-listings';
 import CallToAction from '@/components/call-to-action';
 import ComprehensiveSchemaMarkup from '@/components/comprehensive-schema';
 import CriticalCSS from '@/components/critical-css';
 import CriticalPerformanceLoader from '@/components/critical-performance-loader';
 import EnhancedPropertyFallback from '@/components/enhanced-property-fallback';
-import ErrorBoundary from '@/components/error-boundary';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
 import GeoEnhancedSchema from '@/components/geo-enhanced-schema';
@@ -17,17 +14,12 @@ import { ContextualContent } from '@/components/internal-link-optimizer';
 import LinkBuildingSEO from '@/components/link-building-seo';
 import LocalBusinessSchema from '@/components/local-business-schema';
 import LocalCitationsSchema from '@/components/local-citations-schema';
-import NeighborhoodHeatmap from '@/components/neighborhood-heatmap';
-import PreferenceCollector from '@/components/preference-collector';
 import RealScoutAnalytics from '@/components/realscout-analytics';
 import RealScoutListings from '@/components/realscout-listings';
-import RealScoutSearchWidget from '@/components/realscout-search-widget';
 import RelatedSearches from '@/components/related-searches';
 import ReviewHighlights from '@/components/review-highlights';
 import GoogleBusinessReview from '@/components/google-business-review';
-import SkyeCanyonNeighborhoodExplorer from '@/components/skye-canyon-neighborhood-explorer';
 import ServicesOverview from '@/components/services-overview';
-import VoiceSearchIntegration from '@/components/voice-search-integration';
 
 export default function Home() {
   return (
@@ -177,51 +169,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AI Search Assistant */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
-              AI-Powered Skye Canyon Property Search Las Vegas
-            </h2>
-            <AISearchAssistant />
-          </div>
-        </section>
-
-        {/* Voice Search Integration with Conversion Limits */}
-        <section className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Voice-Activated Skye Canyon Property Search
-              </h2>
-              <p className="text-xl text-gray-600">
-                Search for your dream home using natural language
-              </p>
-            </div>
-            <ErrorBoundary>
-              <VoiceSearchIntegration
-                maxSearches={3}
-                onSearchLimitReached={() => {
-                  // Track conversion event when limit is reached
-                  if (window.gtag) {
-                    window.gtag('event', 'voice_search_conversion', {
-                      event_category: 'lead_generation',
-                      event_label: 'realscout_onboarding_redirect',
-                    });
-                  }
-                }}
-              />
-            </ErrorBoundary>
-          </div>
-        </section>
-
-        {/* Authentic Property Listings */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AuthenticPropertyListings />
-          </div>
-        </section>
-
         {/* Quick Market Stats Preview */}
         <section className="py-12 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -267,51 +214,117 @@ export default function Home() {
         {/* Google Business Review Section */}
         <GoogleBusinessReview />
 
-        {/* Skye Canyon Neighborhood Explorer */}
+        {/* Explore Skye Canyon - Preview Cards */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Explore Skye Canyon Neighborhood
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Explore Skye Canyon Las Vegas 89166
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Discover nearby restaurants, schools, parks, and amenities that make Skye Canyon the perfect place to call home.
+                Discover everything that makes Skye Canyon one of the most sought-after communities
+                in Northwest Las Vegas
               </p>
             </div>
-            <SkyeCanyonNeighborhoodExplorer />
-          </div>
-        </section>
 
-        {/* Home Valuation CTA Section */}
-        <section className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <RealScoutSearchWidget variant="inline" className="mb-8" />
-          </div>
-        </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Neighborhood Guide Card */}
+              <a href="/skye-canyon-guide" className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+                <div className="bg-gradient-to-br from-blue-500 to-blue-700 p-6 text-white">
+                  <svg className="w-10 h-10 mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <h3 className="text-xl font-bold">Neighborhood Guide</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">Restaurants, schools, parks, and amenities near Skye Canyon with interactive maps and drive times.</p>
+                  <span className="text-blue-600 font-semibold group-hover:text-blue-800 inline-flex items-center">
+                    Explore the Area <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </span>
+                </div>
+              </a>
 
-        {/* Neighborhood Heatmap */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Skye Canyon Neighborhood Market Analytics
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Explore interactive data on Las Vegas neighborhoods including price trends, market
-                activity, school ratings, and local insights to make informed decisions.
-              </p>
+              {/* Market Analysis Card */}
+              <a href="/market-analysis" className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+                <div className="bg-gradient-to-br from-emerald-500 to-emerald-700 p-6 text-white">
+                  <svg className="w-10 h-10 mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  <h3 className="text-xl font-bold">Market Analytics</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">Price trends, days on market, neighborhood heatmaps, and real-time data for Skye Canyon and NW Las Vegas.</p>
+                  <span className="text-emerald-600 font-semibold group-hover:text-emerald-800 inline-flex items-center">
+                    View Market Data <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+
+              {/* Property Search Card */}
+              <a href="/search" className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+                <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-6 text-white">
+                  <svg className="w-10 h-10 mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  <h3 className="text-xl font-bold">Advanced Search</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">AI-powered and voice-activated property search tools to find your dream home in Skye Canyon.</p>
+                  <span className="text-purple-600 font-semibold group-hover:text-purple-800 inline-flex items-center">
+                    Search Properties <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+
+              {/* Schools Card */}
+              <a href="/skye-canyon-schools" className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+                <div className="bg-gradient-to-br from-amber-500 to-amber-700 p-6 text-white">
+                  <svg className="w-10 h-10 mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  <h3 className="text-xl font-bold">Schools & Education</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">Top-rated Clark County schools, ratings, programs, and district information for Skye Canyon families.</p>
+                  <span className="text-amber-600 font-semibold group-hover:text-amber-800 inline-flex items-center">
+                    View Schools <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+
+              {/* Communities Card */}
+              <a href="/skye-canyon-communities" className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+                <div className="bg-gradient-to-br from-rose-500 to-rose-700 p-6 text-white">
+                  <svg className="w-10 h-10 mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  <h3 className="text-xl font-bold">Communities</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">Explore Skye Canyon sub-communities, builders like Toll Brothers and Lennar, and home styles available.</p>
+                  <span className="text-rose-600 font-semibold group-hover:text-rose-800 inline-flex items-center">
+                    Explore Communities <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+
+              {/* Parks & Recreation Card */}
+              <a href="/skye-canyon-parks" className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
+                <div className="bg-gradient-to-br from-teal-500 to-teal-700 p-6 text-white">
+                  <svg className="w-10 h-10 mb-3 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                  <h3 className="text-xl font-bold">Parks & Recreation</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">Desert Highlands Golf Course, Skye Canyon Park, trails, pools, and outdoor recreation in the community.</p>
+                  <span className="text-teal-600 font-semibold group-hover:text-teal-800 inline-flex items-center">
+                    See Amenities <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </span>
+                </div>
+              </a>
             </div>
-            <NeighborhoodHeatmap />
-          </div>
-        </section>
-
-        {/* Preference Collector */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
-              Tell Us What Skye Canyon Features You're Looking For
-            </h2>
-            <PreferenceCollector />
           </div>
         </section>
 
@@ -330,135 +343,69 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <a href="/skye-canyon-guide" className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-lg mb-2">Skye Canyon (89166)</h3>
                 <p className="text-sm text-gray-600">
                   Guard-gated luxury community with Desert Highlands Golf Course
                 </p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg text-center">
+              </a>
+              <a href="/northwest-las-vegas" className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-lg mb-2">Centennial Hills</h3>
                 <p className="text-sm text-gray-600">
                   Master-planned community with top-rated schools and amenities
                 </p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg text-center">
+              </a>
+              <a href="/northwest-las-vegas" className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-lg mb-2">Providence</h3>
                 <p className="text-sm text-gray-600">
                   Family-friendly neighborhoods with parks and recreation
                 </p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg text-center">
+              </a>
+              <a href="/northwest-las-vegas" className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-lg mb-2">Northwest Las Vegas</h3>
                 <p className="text-sm text-gray-600">
                   Established communities near shopping and entertainment
                 </p>
-              </div>
+              </a>
             </div>
 
-            {/* Key Landmarks & Features */}
+            {/* Why Choose Skye Canyon */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-center mb-8">Why Choose Skye Canyon?</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2-5V7m0 4V9"
-                      />
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
                   <h4 className="font-semibold mb-2">24/7 Guard-Gated Security</h4>
-                  <p className="text-sm text-gray-600">
-                    Premium security with controlled access and roving patrols
-                  </p>
+                  <p className="text-sm text-gray-600">Premium security with controlled access and roving patrols</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
-                      />
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                     </svg>
                   </div>
                   <h4 className="font-semibold mb-2">Desert Highlands Golf Course</h4>
-                  <p className="text-sm text-gray-600">
-                    18-hole championship golf course with clubhouse amenities
-                  </p>
+                  <p className="text-sm text-gray-600">18-hole championship golf course with clubhouse amenities</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                      />
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
                   <h4 className="font-semibold mb-2">Top-Rated Schools</h4>
-                  <p className="text-sm text-gray-600">
-                    Highly-rated Clark County schools serving the community
-                  </p>
+                  <p className="text-sm text-gray-600">Highly-rated Clark County schools serving the community</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Contact CTA */}
-            <div className="text-center mt-12">
-              <div className="bg-white border-2 border-blue-200 p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold mb-4">Ready to Explore Skye Canyon?</h3>
-                <p className="text-gray-600 mb-6">
-                  Contact Dr. Jan Duffy for expert guidance on Skye Canyon homes and Northwest Las
-                  Vegas real estate opportunities.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="tel:+17025001902"
-                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    Call (702) 500-1902
-                  </a>
-                  <a
-                    href="https://g.co/kgs/nbUf6Pj"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-                  >
-                    Schedule Consultation
-                  </a>
-                </div>
-                <p className="text-sm text-gray-500 mt-4">
-                  📍 10111 W Skye Canyon Park Dr, Las Vegas, NV 89166
-                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* RealScout Search CTA */}
+        {/* CTA Section */}
         <section className="py-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
@@ -476,12 +423,21 @@ export default function Home() {
               >
                 Search Available Homes
               </a>
-              <div className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 border-2 border-blue-400 transition-colors shadow-lg">
-                <HomebotWidget id="homebot_homeowner" />
-              </div>
+              <a
+                href="tel:+17025001902"
+                className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 border-2 border-blue-400 transition-colors shadow-lg text-center"
+              >
+                Call (702) 500-1902
+              </a>
+              <a
+                href="/contact"
+                className="bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 border-2 border-white/50 transition-colors shadow-lg text-center"
+              >
+                Get Home Valuation
+              </a>
             </div>
             <p className="text-sm text-blue-200 mt-4">
-              Powered by RealScout MLS • Updated in real-time
+              Powered by RealScout MLS &bull; Updated in real-time &bull; 10111 W Skye Canyon Park Dr, Las Vegas, NV 89166
             </p>
           </div>
         </section>
