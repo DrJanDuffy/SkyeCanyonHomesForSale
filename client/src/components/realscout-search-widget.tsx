@@ -1,3 +1,5 @@
+import HomebotWidget from '@/components/homebot-widget';
+
 interface RealScoutSearchWidgetProps {
   className?: string;
   variant?: 'hero' | 'sidebar' | 'inline';
@@ -47,24 +49,7 @@ export default function RealScoutSearchWidget({
 
           <div className="bg-green-50 p-6 rounded-lg text-center">
             <h3 className="font-semibold text-green-900 mb-3">Get Your Home's Value</h3>
-            <div id="homebot_homeowner_3"></div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                (function (h,b) { 
-                  var w = window, d = document, s = 'script', x, y; 
-                  w['__hb_namespace'] = h; 
-                  w[h] = w[h] || function () { (w[h].q=w[h].q||[]).push(arguments) }; 
-                  y = d.createElement(s); 
-                  x = d.getElementsByTagName(s)[0]; 
-                  y.async = 1; 
-                  y.src = b; 
-                  x.parentNode.insertBefore(y,x) 
-                })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js'); 
-                Homebot('#homebot_homeowner_3', '35de8cf0a487cf0fec06278f2023805ea02eba0b58960a43')
-              `,
-              }}
-            />
+            <HomebotWidget id="homebot_homeowner_3" />
             <p className="text-sm text-green-700 mt-3">
               Instant market analysis with recent comparable sales
             </p>
@@ -77,7 +62,7 @@ export default function RealScoutSearchWidget({
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="http://drjanduffy.realscout.com/onboarding"
+              href="https://drjanduffy.realscout.com/onboarding"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
@@ -117,24 +102,7 @@ export default function RealScoutSearchWidget({
 
           <div className="border-t pt-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">Home Valuation</label>
-            <div id="homebot_homeowner_5"></div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                (function (h,b) { 
-                  var w = window, d = document, s = 'script', x, y; 
-                  w['__hb_namespace'] = h; 
-                  w[h] = w[h] || function () { (w[h].q=w[h].q||[]).push(arguments) }; 
-                  y = d.createElement(s); 
-                  x = d.getElementsByTagName(s)[0]; 
-                  y.async = 1; 
-                  y.src = b; 
-                  x.parentNode.insertBefore(y,x) 
-                })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js'); 
-                Homebot('#homebot_homeowner_5', '35de8cf0a487cf0fec06278f2023805ea02eba0b58960a43')
-              `,
-              }}
-            />
+            <HomebotWidget id="homebot_homeowner_5" />
           </div>
         </div>
       </div>
@@ -163,24 +131,7 @@ export default function RealScoutSearchWidget({
           ></realscout-search>
 
           <div className="inline-block">
-            <div id="homebot_homeowner_4"></div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                (function (h,b) { 
-                  var w = window, d = document, s = 'script', x, y; 
-                  w['__hb_namespace'] = h; 
-                  w[h] = w[h] || function () { (w[h].q=w[h].q||[]).push(arguments) }; 
-                  y = d.createElement(s); 
-                  x = d.getElementsByTagName(s)[0]; 
-                  y.async = 1; 
-                  y.src = b; 
-                  x.parentNode.insertBefore(y,x) 
-                })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js'); 
-                Homebot('#homebot_homeowner_4', '35de8cf0a487cf0fec06278f2023805ea02eba0b58960a43')
-              `,
-              }}
-            />
+            <HomebotWidget id="homebot_homeowner_4" />
           </div>
         </div>
       </div>

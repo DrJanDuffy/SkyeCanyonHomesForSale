@@ -121,7 +121,7 @@ export default function AuthenticPropertyListings() {
             <Button
               variant="outline"
               className="w-full border-blue-300 text-blue-700 hover:bg-blue-100 dark:border-blue-600 dark:text-blue-300 dark:hover:bg-blue-800"
-              onClick={() => window.open('http://drjanduffy.realscout.com/onboarding', '_blank')}
+              onClick={() => window.open('https://drjanduffy.realscout.com/onboarding', '_blank')}
             >
               <ExternalLink className="h-4 w-4 mr-2" />
               Search All Available Properties

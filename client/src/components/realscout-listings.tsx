@@ -1,3 +1,5 @@
+import HomebotWidget from '@/components/homebot-widget';
+
 interface RealScoutListingsProps {
   className?: string;
   priceMin?: string;
@@ -100,7 +102,7 @@ export default function RealScoutListings({
         <p className="text-blue-100 mb-4">{config.description}</p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a
-            href="http://drjanduffy.realscout.com/onboarding"
+            href="https://drjanduffy.realscout.com/onboarding"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center"
@@ -108,24 +110,7 @@ export default function RealScoutListings({
             Search All Homes
           </a>
           <div className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 border border-blue-400 transition-colors">
-            <div id="homebot_homeowner_1"></div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                (function (h,b) { 
-                  var w = window, d = document, s = 'script', x, y; 
-                  w['__hb_namespace'] = h; 
-                  w[h] = w[h] || function () { (w[h].q=w[h].q||[]).push(arguments) }; 
-                  y = d.createElement(s); 
-                  x = d.getElementsByTagName(s)[0]; 
-                  y.async = 1; 
-                  y.src = b; 
-                  x.parentNode.insertBefore(y,x) 
-                })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js'); 
-                Homebot('#homebot_homeowner_1', '35de8cf0a487cf0fec06278f2023805ea02eba0b58960a43')
-              `,
-              }}
-            />
+            <HomebotWidget id="homebot_homeowner_1" />
           </div>
         </div>
       </div>
@@ -149,7 +134,7 @@ export default function RealScoutListings({
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href="http://drjanduffy.realscout.com/onboarding"
+            href="https://drjanduffy.realscout.com/onboarding"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
@@ -157,24 +142,7 @@ export default function RealScoutListings({
             View All Available Homes
           </a>
           <div className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-            <div id="homebot_homeowner_2"></div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                (function (h,b) { 
-                  var w = window, d = document, s = 'script', x, y; 
-                  w['__hb_namespace'] = h; 
-                  w[h] = w[h] || function () { (w[h].q=w[h].q||[]).push(arguments) }; 
-                  y = d.createElement(s); 
-                  x = d.getElementsByTagName(s)[0]; 
-                  y.async = 1; 
-                  y.src = b; 
-                  x.parentNode.insertBefore(y,x) 
-                })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js'); 
-                Homebot('#homebot_homeowner_2', '35de8cf0a487cf0fec06278f2023805ea02eba0b58960a43')
-              `,
-              }}
-            />
+            <HomebotWidget id="homebot_homeowner_2" />
           </div>
         </div>
         <p className="text-sm text-gray-600 mt-3">

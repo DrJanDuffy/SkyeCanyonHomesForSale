@@ -122,7 +122,7 @@ export default function AutomatedConversionTracker({
       </div>
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-        <a href="http://drjanduffy.realscout.com/onboarding" 
+        <a href="https://drjanduffy.realscout.com/onboarding" 
            target="_blank" 
            rel="noopener noreferrer"
            onclick="trackConversionClick('realscout_onboarding', 'voice_search_popup')"

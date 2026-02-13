@@ -169,7 +169,7 @@ export default function VoiceSearchIntegration({
       </div>
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="http://drjanduffy.realscout.com/onboarding" 
+        <a href="https://drjanduffy.realscout.com/onboarding" 
            target="_blank" 
            rel="noopener noreferrer"
            onclick="trackConversionClick('realscout_onboarding', 'voice_limit_popup')"

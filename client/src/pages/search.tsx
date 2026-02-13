@@ -45,7 +45,7 @@ export default function Search() {
                     Access our comprehensive MLS database
                   </p>
                   <a
-                    href="http://drjanduffy.realscout.com/onboarding"
+                    href="https://drjanduffy.realscout.com/onboarding"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"

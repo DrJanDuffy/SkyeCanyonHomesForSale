@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import HomebotWidget from '@/components/homebot-widget';
 import AgentBio from '@/components/agent-bio';
 import AISearchAssistant from '@/components/ai-search-assistant';
 import AuthenticPropertyListings from '@/components/authentic-property-listings';
@@ -468,7 +469,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="http://drjanduffy.realscout.com/onboarding"
+                href="https://drjanduffy.realscout.com/onboarding"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg text-center"
@@ -476,24 +477,7 @@ export default function Home() {
                 Search Available Homes
               </a>
               <div className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 border-2 border-blue-400 transition-colors shadow-lg">
-                <div id="homebot_homeowner"></div>
-                <script
-                  dangerouslySetInnerHTML={{
-                    __html: `
-                  (function (h,b) { 
-                    var w = window, d = document, s = 'script', x, y; 
-                    w['__hb_namespace'] = h; 
-                    w[h] = w[h] || function () { (w[h].q=w[h].q||[]).push(arguments) }; 
-                    y = d.createElement(s); 
-                    x = d.getElementsByTagName(s)[0]; 
-                    y.async = 1; 
-                    y.src = b; 
-                    x.parentNode.insertBefore(y,x) 
-                  })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js'); 
-                  Homebot('#homebot_homeowner', '35de8cf0a487cf0fec06278f2023805ea02eba0b58960a43')
-                `,
-                  }}
-                />
+                <HomebotWidget id="homebot_homeowner" />
               </div>
             </div>
             <p className="text-sm text-blue-200 mt-4">
