@@ -1,25 +1,11 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { CalendlyInline } from '@/components/calendly-widget';
 import Footer from '@/components/footer';
 import HomebotWidget from '@/components/homebot-widget';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    propertyType: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
 
   return (
     <>
@@ -115,79 +101,14 @@ export default function Contact() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <Card>
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Full Name</label>
-                        <Input
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="Your full name"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Email Address</label>
-                        <Input
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="your.email@example.com"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Phone Number</label>
-                        <Input
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="(702) 555-0123"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Property Interest</label>
-                        <select
-                          value={formData.propertyType}
-                          onChange={(e) =>
-                            setFormData({ ...formData, propertyType: e.target.value })
-                          }
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        >
-                          <option value="">Select property type</option>
-                          <option value="luxury-home">Luxury Home</option>
-                          <option value="golf-course">Golf Course Property</option>
-                          <option value="new-construction">New Construction</option>
-                          <option value="resale">Resale Home</option>
-                          <option value="investment">Investment Property</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Message</label>
-                      <Textarea
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Tell me about your real estate needs..."
-                        rows={5}
-                        required
-                      />
-                    </div>
-
-                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              {/* Schedule a Consultation - Calendly Inline */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6">Schedule a Consultation</h2>
+                <p className="text-gray-600 mb-6">
+                  Pick a time that works for you. Dr. Jan Duffy will personally review your real estate needs.
+                </p>
+                <CalendlyInline />
+              </div>
 
               {/* Contact Information */}
               <div className="space-y-8">

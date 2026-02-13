@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { CalendlyPopupButton } from '@/components/calendly-widget';
 import Footer from '@/components/footer';
 import HomebotWidget from '@/components/homebot-widget';
 
@@ -31,12 +32,18 @@ export default function SellerAgentServices() {
               Professional listing and marketing services with proven results in the competitive
               Skye Canyon market.
             </p>
-            <a
-              href="tel:+17025001902"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors"
-            >
-              Call (702) 500-1902
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CalendlyPopupButton
+                text="Schedule a Listing Consultation"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors"
+              />
+              <a
+                href="tel:+17025001902"
+                className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-400 border-2 border-green-400 transition-colors"
+              >
+                Call (702) 500-1902
+              </a>
+            </div>
           </div>
         </div>
       </section>

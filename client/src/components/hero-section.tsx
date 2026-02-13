@@ -1,3 +1,5 @@
+import { CalendlyPopupButton } from '@/components/calendly-widget';
+
 export default function HeroSection() {
   return (
     <section
@@ -68,12 +70,10 @@ export default function HeroSection() {
           >
             Call (702) 500-1902
           </a>
-          <a
-            href="/contact"
-            className="bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 border-2 border-white/60 transition-colors text-center"
-          >
-            Get Home Valuation
-          </a>
+          <CalendlyPopupButton
+            text="Book a Consultation"
+            className="bg-transparent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 border-2 border-white/60 transition-colors text-center cursor-pointer"
+          />
         </div>
 
         <p className="text-sm text-white/70">

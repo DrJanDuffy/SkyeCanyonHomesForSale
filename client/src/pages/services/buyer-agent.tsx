@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { CalendlyPopupButton } from '@/components/calendly-widget';
 import ComprehensiveSchemaMarkup from '@/components/comprehensive-schema';
 import Footer from '@/components/footer';
 
@@ -49,13 +50,19 @@ export default function BuyerAgentServices() {
                   15+ years exclusive Skye Canyon specialization with direct builder relationships
                   and off-market access. Average client saves $15K+.
                 </p>
-                <a
-                  href="tel:+17025001902"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
-                  aria-label="Call Dr. Jan Duffy at (702) 500-1902"
-                >
-                  Call (702) 500-1902
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <CalendlyPopupButton
+                    text="Schedule a Buyer Consultation"
+                    className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 cursor-pointer"
+                  />
+                  <a
+                    href="tel:+17025001902"
+                    className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 border-2 border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    aria-label="Call Dr. Jan Duffy at (702) 500-1902"
+                  >
+                    Call (702) 500-1902
+                  </a>
+                </div>
               </div>
             </div>
           </section>

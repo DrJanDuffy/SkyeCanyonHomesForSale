@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import AgentBio from '@/components/agent-bio';
+import { CalendlyPopupButton } from '@/components/calendly-widget';
 import CallToAction from '@/components/call-to-action';
 import ComprehensiveSchemaMarkup from '@/components/comprehensive-schema';
 import FAQSection from '@/components/faq-section';
@@ -219,6 +220,10 @@ export default function Home() {
               <a href="https://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg text-center">
                 Search Available Homes
               </a>
+              <CalendlyPopupButton
+                text="Schedule a Consultation"
+                className="bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-400 transition-colors shadow-lg text-center"
+              />
               <a href="tel:+17025001902" className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-400 border-2 border-blue-400 transition-colors shadow-lg text-center">
                 Call (702) 500-1902
               </a>

@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Router, Route, Switch } from 'wouter';
+import { CalendlyPopupWidget } from '@/components/calendly-widget';
 import Navigation from '@/components/navigation';
 
 // Lazy load all pages to prevent one module crash from breaking the entire app
@@ -51,6 +52,7 @@ export default function App(): JSX.Element {
   return (
     <Router>
       <Navigation />
+      <CalendlyPopupWidget />
       <Suspense fallback={<PageLoading />}>
         <Switch>
           {/* Main Routes */}
