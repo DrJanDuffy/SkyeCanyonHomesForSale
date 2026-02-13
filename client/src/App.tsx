@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Router, Route } from 'wouter';
+import { Router, Route, Switch } from 'wouter';
 import Navigation from '@/components/navigation';
 
 // Lazy load all pages to prevent one module crash from breaking the entire app
@@ -52,49 +52,51 @@ export default function App(): JSX.Element {
     <Router>
       <Navigation />
       <Suspense fallback={<PageLoading />}>
-        {/* Main Routes */}
-        <Route path="/" component={Home} />
-        <Route path="/home" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/properties" component={Properties} />
-        <Route path="/property/:id" component={PropertyDetail} />
-        <Route path="/las-vegas" component={LasVegasRealEstate} />
-        <Route path="/las-vegas-real-estate" component={LasVegasRealEstate} />
-        <Route path="/luxury-homes-las-vegas" component={LuxuryHomesLasVegas} />
-        <Route path="/market-analysis" component={MarketAnalysis} />
-        <Route path="/neighborhood-analysis" component={NeighborhoodAnalysis} />
-        <Route path="/privacy-policy" component={PrivacyPolicy} />
-        <Route path="/terms-of-service" component={TermsOfService} />
-        <Route path="/voice-search" component={VoiceSearch} />
-        <Route path="/skye-canyon-guide" component={SkyeCanyonGuide} />
-        <Route path="/skye-canyon-communities" component={SkyeCanyonCommunities} />
-        <Route path="/skye-canyon-parks" component={SkyeCanyonParks} />
-        <Route path="/skye-canyon-schools" component={SkyeCanyonSchools} />
-        <Route path="/northwest-las-vegas" component={NorthwestLasVegas} />
-        <Route path="/performance-dashboard" component={PerformanceDashboard} />
-        <Route path="/lead-dashboard" component={LeadDashboard} />
-        <Route path="/followup-boss-status" component={FollowupBossStatus} />
-        <Route path="/seo-management" component={SeoManagement} />
-        <Route path="/home-simple" component={HomeSimple} />
+        <Switch>
+          {/* Main Routes */}
+          <Route path="/" component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/properties" component={Properties} />
+          <Route path="/property/:id" component={PropertyDetail} />
+          <Route path="/las-vegas" component={LasVegasRealEstate} />
+          <Route path="/las-vegas-real-estate" component={LasVegasRealEstate} />
+          <Route path="/luxury-homes-las-vegas" component={LuxuryHomesLasVegas} />
+          <Route path="/market-analysis" component={MarketAnalysis} />
+          <Route path="/neighborhood-analysis" component={NeighborhoodAnalysis} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route path="/terms-of-service" component={TermsOfService} />
+          <Route path="/voice-search" component={VoiceSearch} />
+          <Route path="/skye-canyon-guide" component={SkyeCanyonGuide} />
+          <Route path="/skye-canyon-communities" component={SkyeCanyonCommunities} />
+          <Route path="/skye-canyon-parks" component={SkyeCanyonParks} />
+          <Route path="/skye-canyon-schools" component={SkyeCanyonSchools} />
+          <Route path="/northwest-las-vegas" component={NorthwestLasVegas} />
+          <Route path="/performance-dashboard" component={PerformanceDashboard} />
+          <Route path="/lead-dashboard" component={LeadDashboard} />
+          <Route path="/followup-boss-status" component={FollowupBossStatus} />
+          <Route path="/seo-management" component={SeoManagement} />
+          <Route path="/home-simple" component={HomeSimple} />
 
-        {/* Service Routes */}
-        <Route path="/services/buyer-agent" component={BuyerAgent} />
-        <Route path="/services/first-time-buyer" component={FirstTimeBuyer} />
-        <Route path="/services/luxury-properties" component={LuxuryProperties} />
-        <Route path="/services/new-construction" component={NewConstruction} />
-        <Route path="/services/seller-agent" component={SellerAgent} />
-        <Route path="/services/relocation" component={Relocation} />
+          {/* Service Routes */}
+          <Route path="/services/buyer-agent" component={BuyerAgent} />
+          <Route path="/services/first-time-buyer" component={FirstTimeBuyer} />
+          <Route path="/services/luxury-properties" component={LuxuryProperties} />
+          <Route path="/services/new-construction" component={NewConstruction} />
+          <Route path="/services/seller-agent" component={SellerAgent} />
+          <Route path="/services/relocation" component={Relocation} />
 
-        {/* Search Route */}
-        <Route path="/search" component={Search} />
-        <Route path="/search/:query" component={Search} />
+          {/* Search Route */}
+          <Route path="/search" component={Search} />
+          <Route path="/search/:query" component={Search} />
 
-        {/* Demo Route */}
-        <Route path="/demo/maps" component={StaticMapsDemo} />
+          {/* Demo Route */}
+          <Route path="/demo/maps" component={StaticMapsDemo} />
 
-        {/* 404 Route - must be last */}
-        <Route component={NotFound} />
+          {/* 404 Route - must be last inside Switch */}
+          <Route component={NotFound} />
+        </Switch>
       </Suspense>
     </Router>
   );
