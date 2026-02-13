@@ -45,23 +45,22 @@ export default function NeighborhoodHeatmap() {
   );
 
   useEffect(() => {
-    fetchHeatmapData();
-  }, [fetchHeatmapData]);
-
-  const fetchHeatmapData = async () => {
-    try {
-      const response = await fetch('/api/neighborhood-heatmap');
-      const data = await response.json();
-      setHeatmapData(data.neighborhoods || []);
-      setLocalInsights(data.insights || null);
-    } catch (_error) {
-      // Use sample data for demonstration
-      setHeatmapData(sampleHeatmapData);
-      setLocalInsights(sampleInsights);
-    } finally {
-      setIsLoading(false);
+    async function fetchHeatmapData() {
+      try {
+        const response = await fetch('/api/neighborhood-heatmap');
+        const data = await response.json();
+        setHeatmapData(data.neighborhoods || []);
+        setLocalInsights(data.insights || null);
+      } catch (_error) {
+        // Use sample data for demonstration
+        setHeatmapData(sampleHeatmapData);
+        setLocalInsights(sampleInsights);
+      } finally {
+        setIsLoading(false);
+      }
     }
-  };
+    fetchHeatmapData();
+  }, []);
 
   const getHeatmapColor = (neighborhood: HeatmapData, viewType: string) => {
     switch (viewType) {
