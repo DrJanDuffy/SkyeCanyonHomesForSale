@@ -97,7 +97,7 @@ export default function RelatedSearches({ searchType }: RelatedSearchesProps) {
           <p className="text-gray-600">
             Need help with a specific search?
             <a
-              href="tel:(702)500-1902"
+              href="tel:+17025001902"
               className="text-realscout-blue font-semibold ml-1 hover:underline"
             >
               Call Dr. Jan Duffy at (702) 500-1902

@@ -97,7 +97,7 @@ shared/
 ## Business Logic
 
 ### Property Search
-- All property search buttons link to RealScout onboarding: http://drjanduffy.realscout.com/onboarding
+- All property search buttons link to RealScout onboarding: https://drjanduffy.realscout.com/onboarding
 - Use target="_blank" and rel="noopener noreferrer" for external links
 
 ### Home Valuations

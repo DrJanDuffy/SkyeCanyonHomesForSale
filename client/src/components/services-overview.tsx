@@ -134,7 +134,7 @@ export default function ServicesOverview() {
                 Schedule Free Consultation
               </Button>
             </a>
-            <a href="tel:(702) 500-1902">
+            <a href="tel:+17025001902">
               <Button
                 variant="outline"
                 className="border-realscout-blue text-realscout-blue hover:bg-realscout-blue hover:text-white"

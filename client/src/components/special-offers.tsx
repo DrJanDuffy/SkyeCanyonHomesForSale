@@ -93,7 +93,7 @@ export default function SpecialOffers() {
             Ready to take advantage of these exclusive offers?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:(702) 500-1902">
+            <a href="tel:+17025001902">
               <Button className="bg-white text-realscout-blue hover:bg-gray-100">
                 Call (702) 500-1902
               </Button>

@@ -62,7 +62,7 @@ export default function Search() {
                     Find out what your home is worth
                   </p>
                   <a
-                    href="tel:(702) 500-1902"
+                    href="tel:+17025001902"
                     className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                   >
                     Call (702) 500-1902

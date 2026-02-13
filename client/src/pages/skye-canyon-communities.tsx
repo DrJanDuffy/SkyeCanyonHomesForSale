@@ -1,6 +1,5 @@
 import { Building2, Car, DollarSign, Home, MapPin, Users } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import EnhancedStructuredData from '@/components/enhanced-structured-data';
 import FAQSection from '@/components/faq-section';
 import Footer from '@/components/footer';
 import RealScoutListings from '@/components/realscout-listings';
@@ -138,8 +137,6 @@ export default function SkyeCanyonCommunities() {
 
         <link rel="canonical" href="https://skyecanyonhomesforsale.com/skye-canyon-communities" />
       </Helmet>
-
-      <EnhancedStructuredData />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
 
@@ -381,7 +378,7 @@ export default function SkyeCanyonCommunities() {
                 View All Properties
               </a>
               <a
-                href="tel:(702) 500-1902"
+                href="tel:+17025001902"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
                 Call (702) 500-1902

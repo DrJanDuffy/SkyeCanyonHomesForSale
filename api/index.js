@@ -99,7 +99,7 @@ app.post('/api/leads', (req, res) => {
 // RealScout integration endpoint
 app.get('/api/realscout/onboarding', (req, res) => {
   res.json({
-    url: "http://drjanduffy.realscout.com/onboarding",
+    url: "https://drjanduffy.realscout.com/onboarding",
     agentId: "QWdlbnQtMjI1MDUw",
     location: "Skye Canyon, Las Vegas, NV 89166"
   });

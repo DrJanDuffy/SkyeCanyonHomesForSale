@@ -254,16 +254,20 @@ export default function PropertyDetail() {
                 </div>
 
                 <div className="space-y-3">
-                  <Button className="w-full bg-realscout-blue text-white hover:bg-realscout-navy">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call (702) 555-0123
+                  <Button asChild className="w-full bg-realscout-blue text-white hover:bg-realscout-navy">
+                    <a href="tel:+17025001902">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call (702) 500-1902
+                    </a>
                   </Button>
-                  <Button
+                  <Button asChild
                     variant="outline"
                     className="w-full border-realscout-blue text-realscout-blue hover:bg-realscout-blue hover:text-white"
                   >
-                    <Mail className="w-4 h-4 mr-2" />
-                    Send Email
+                    <a href="mailto:DrDuffy@SkyeCanyonHomesForSale.com">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Email
+                    </a>
                   </Button>
                   <a
                     href="https://g.co/kgs/nbUf6Pj"

@@ -58,7 +58,7 @@ export default function ModernHeader() {
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-amber-600" />
               <a 
-                href="tel:702-500-1902" 
+                href="tel:+17025001902" 
                 className="text-sm font-semibold text-amber-800 hover:text-amber-900 transition-colors"
               >
                 Call Now: (702) 500-1902
@@ -147,7 +147,7 @@ export default function ModernHeader() {
           <div className="lg:hidden flex items-center space-x-2">
             {/* Mobile Call Button */}
             <a 
-              href="tel:702-500-1902"
+              href="tel:+17025001902"
               className="bg-amber-600 text-white p-2 rounded-lg hover:bg-amber-700 transition-colors"
             >
               <Phone className="w-5 h-5" />
@@ -218,7 +218,7 @@ export default function ModernHeader() {
                 </Button>
                 
                 <a 
-                  href="tel:702-500-1902"
+                  href="tel:+17025001902"
                   className="flex items-center justify-center w-full bg-amber-600 text-white font-semibold py-3 rounded-lg hover:bg-amber-700 transition-colors"
                 >
                   <Phone className="w-4 h-4 mr-2" />

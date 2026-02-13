@@ -52,7 +52,7 @@ export default function NotFound() {
                   </Button>
                   
                   <Button asChild variant="outline">
-                    <a href="tel:(702) 500-1902">
+                    <a href="tel:+17025001902">
                       <Phone className="w-4 h-4 mr-2" />
                       Call (702) 500-1902
                     </a>
